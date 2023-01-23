@@ -1,3 +1,4 @@
+// https://www.codechef.com/problems/NONADJFLIP?tab=statement
 #include <iostream>
 #include <string>
 #include <algorithm>
