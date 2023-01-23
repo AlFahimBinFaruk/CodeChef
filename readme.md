@@ -1,2 +1,2 @@
 ### Codechef
-* codechef problems solutions.
+* Solutions of CodeChef 1100+ difficulty level problems.
