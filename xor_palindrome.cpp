@@ -1,3 +1,4 @@
+// https://www.codechef.com/problems/XOR_PAL
 #include <iostream>
 #include <string>
 using namespace std;
