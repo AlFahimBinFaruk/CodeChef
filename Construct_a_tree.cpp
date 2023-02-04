@@ -8,17 +8,17 @@ we will repeat the same procejure untill the tree is empty then return its root.
 */
 class Solution{
     public:
-    int preIndex = 0;
+	int preIndex = 0;
     int searchIn(int arr[],int start,int end,int value){
         for(int i=start; i<=end; i++){
             if(arr[i] == value){
                 return i;
             }
-       }
-     }
+        }
+	}
 
 
-    Node* buildTreeUtil(int in[],int pre[],int inStart,int inEnd){
+	Node* buildTreeUtil(int in[],int pre[],int inStart,int inEnd){
 		if(inStart > inEnd){
 			return NULL;
 		}
