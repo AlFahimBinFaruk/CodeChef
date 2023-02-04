@@ -8,38 +8,38 @@ we will repeat the same procejure untill the tree is empty then return its root.
 */
 class Solution{
     public:
-	  int preIndex = 0;
+	int preIndex = 0;
     int searchIn(int arr[],int start,int end,int value){
         for(int i=start; i<=end; i++){
             if(arr[i] == value){
                 return i;
             }
         }
-	  }
+	}
 
 
-    Node* buildTreeUtil(int in[],int pre[],int inStart,int inEnd){
-      if(inStart > inEnd){
-        return NULL;
-      }
-
-      Node* tNode = new Node(pre[preIndex]);
-      preIndex++;
-
-      // if tree has no childs
-      if(inStart == inEnd){
-        return tNode;
-      }
-
-      int inIndex = searchIn(in,inStart,inEnd,tNode->data);
-
-      // build left tree
-      tNode->left = buildTreeUtil(in,pre,inStart,inIndex - 1);
-      // build right tree
-      tNode->right = buildTreeUtil(in,pre,inIndex + 1,inEnd);
-
-      return tNode;
-    }
+	Node* buildTreeUtil(int in[],int pre[],int inStart,int inEnd){
+		if(inStart > inEnd){
+			return NULL;
+		}
+		
+		Node* tNode = new Node(pre[preIndex]);
+		preIndex++;
+		
+		// if tree has no childs
+		if(inStart == inEnd){
+			return tNode;
+		}
+		
+		int inIndex = searchIn(in,inStart,inEnd,tNode->data);
+		
+		// build left tree
+		tNode->left = buildTreeUtil(in,pre,inStart,inIndex - 1);
+		// build right tree
+		tNode->right = buildTreeUtil(in,pre,inIndex + 1,inEnd);
+		
+		return tNode;
+	}
     Node* buildTree(int in[],int pre[], int n){
         return buildTreeUtil(in,pre,0,n - 1);
     }
