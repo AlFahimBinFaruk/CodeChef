@@ -66,3 +66,62 @@ int main()
 	}
 	return 0;
 }
+
+// Working solution
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int t;
+	cin >> t;
+
+	while (t--)
+	{
+		int x, y;
+		cin >> x >> y;
+
+		int result = 0;
+		if (x % 2 == 0)
+		{
+			// The smallest prime number of even numbers will always be 2.
+			int need = y - x;
+			result += (need / 2);
+			if (need % 2 == 1)
+			{
+				result++;
+			}
+			cout << result << endl;
+		}
+		else
+		{
+			if (x % 3 == 0)
+			{
+				x += 3;
+				result++;
+			}
+
+			if (x % 5 == 0)
+			{
+				x += 5;
+				result++;
+			}
+
+			if (x % 7 == 0)
+			{
+				x += 7;
+				result++;
+			}
+
+			int need = y - x;
+			result += (need / 2);
+			if (need % 2)
+			{
+				result++;
+			}
+
+			cout << result << endl;
+		}
+	}
+	return 0;
+}
